@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#ffeef2;
+}
+
+/* Envelope */
+#letter{
+    width: 70vw;
+    max-width: 500px;
+    min-width: 200px;
+    height: auto;
+    cursor:pointer;
+    transition:0.5s;
+}
+
+/* Opening animation */
+.open{
+    transform:scale(1.3) rotate(10deg);
+    opacity:0;
+}
+
+/* Card */
+#card{
+    display:none;
+    width:350px;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+
+    animation:showCard 1s ease;
+}
+
+@keyframes showCard{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="letterBox">
+    <img src="letter.png" id="letter">
+</div>
+
+<div id="card">
+    <h1>Happy Teacher's Day 🌸</h1>
+
+    <p>
+        Thank you for always guiding and inspiring us.
+    </p>
+</div>
+
+<script>
+
+document.getElementById("letter").onclick = function(){
+
+    // add animation
+    this.classList.add("open");
+
+    // wait animation finish
+    setTimeout(() => {
+
+        document.getElementById("letterBox").style.display = "none";
+        document.getElementById("card").style.display = "block";
+
+    }, 500);
+}
+
+</script>
+
+</body>
+</html>
