@@ -28,7 +28,7 @@ body{
     opacity:0;
 }
 
-/* Card */
+/* Card 
 #card{
     display:none;
     width:350px;
@@ -38,6 +38,42 @@ body{
     text-align:center;
 
     animation:showCard 1s ease;
+}
+*/
+
+#card{
+    display:none;
+    animation: showCard 1s ease;
+}
+
+.cardBox{
+    position: relative;
+    width: 350px;
+    max-width: 90vw;
+}
+
+.cardBg{
+    width: 100%;
+    border-radius: 20px;
+}
+
+.cardBox h1,
+.cardBox p{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-align: center;
+}
+
+.cardBox h1{
+    top: 30%;
+    font-size: 28px;
+}
+
+.cardBox p{
+    top: 50%;
+    font-size: 18px;
 }
 
 @keyframes showCard{
@@ -62,11 +98,11 @@ body{
 </div>
 
 <div id="card">
-    <h1>Happy Teacher's Day 🌸</h1>
-
-    <p>
-        Thank you for always guiding and inspiring us.
-    </p>
+    <div class="cardBox">
+        <img src="images/Card.png" class="cardBg">
+        <h1>Happy Teacher's Day</h1>
+        <p>Thank you for everything!</p>
+    </div>
 </div>
 
 <script>
